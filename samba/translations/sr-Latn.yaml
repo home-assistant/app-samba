@@ -1,0 +1,64 @@
+---
+configuration:
+  username:
+    name: Korisničko ime
+    description: >-
+      Korisničko ime koje želite da koristite za autentifikaciju na Samba serveru.
+  password:
+    name: Lozinka
+    description: >-
+      Lozinka koja odgovara korisničkom imenu podešenom za autentifikaciju.
+  workgroup:
+    name: Radna grupa
+    description: Promenite WORKGROUP u skladu sa potrebama vaše mreže.
+  enabled_shares:
+    name: Omogućene deljene fascikle
+    description: >-
+      Lista deljenih fascikli koje treba učiniti dostupnim.
+      Dodavanje deljene fascikle zahteva unos njenog naziva.
+      Dozvoljene vrednosti su local_apps, app_configs, backup, config, media,
+      share ili ssl.
+      Stari nazivi addons i addon_configs se i dalje prihvataju i mapiraju na
+      local_apps i app_configs radi povratne kompatibilnosti.
+      Dozvoljene su isključivo ove vrednosti;
+      konfiguracija se ne može sačuvati ako se na listi nalazi bilo koja druga vrednost.
+  compatibility_mode:
+    name: Omogući režim kompatibilnosti
+    description: >-
+      Uključite ovo da biste koristili stare Samba protokole u Samba aplikaciji.
+  apple_compatibility_mode:
+    name: Omogući podešavanja kompatibilnosti za Apple uređaje
+    description: >-
+      Omogućava Samba podešavanja za bolju interoperabilnost sa Apple
+      uređajima. Može izazvati probleme sa sistemima datoteka koji ne podržavaju
+      xattr, kao što je exFAT.
+  netbios:
+    name: Omogući NetBIOS preko IP-a
+    description: >-
+      Omogućava NetBIOS preko IP-a za zastarele SMB klijente (Windows 95/98/ME,
+      Windows NT, Windows 2000, Windows XP i LanManager klijente). Onemogućite
+      radi bolje bezbednosti i performansi ako nemate zastarele SMB klijente.
+  local_master:
+    name: Lokalni glavni pregledač
+    description: >-
+      Kada je NetBIOS omogućen, pokušava da postane lokalni glavni pregledač
+      (local master browser) na podmreži.
+  network_discovery:
+    name: Omogući otkrivanje mreže
+    description: >-
+      Oglašava host putem Web Services Dynamic Discovery protokola kako bi se
+      automatski pojavio pod Mreža u Windows File Explorer-u. Onemogućite ako se
+      povezujete putem imena hosta ili IP adrese i ne želite da se host oglašava
+      na mreži. Deljene fascikle ostaju dostupne u oba slučaja.
+  server_signing:
+    name: Potpisivanje na serveru
+    description: >-
+      Podešava zahteve za potpisivanje poruka SMB servera.
+      Pogledajte man stranicu za smb.conf za više informacija.
+      Menjajte ovo samo ako ste sigurni da vaši SMB klijenti to podržavaju.
+  veto_files:
+    name: Zabranjene datoteke
+    description: Lista datoteka koje nisu ni vidljive ni dostupne.
+  allow_hosts:
+    name: Dozvoljeni hostovi
+    description: Lista hostova/mreža kojima je dozvoljen pristup deljenim fasciklama.
